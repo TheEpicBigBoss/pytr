@@ -193,3 +193,78 @@ Payouts need two-factor-authentication: the `payout()` call will respond with a 
 * **start_date_value** `int` either the day of month (0-30), or the weekday (0-6) on which to execute the savings plan
 
 Allowed values for search filters can be found using the `search_tags()` call.
+
+
+### Payloads Samples
+
+Ticker
+
+```json
+{'ask': {'price': 1.24, 'size': 2200, 'time': 1607002479195},
+ 'bid': {'price': 0.64, 'size': 2200, 'time': 1607002479195},
+ 'delta': -0.0121,
+ 'last': {'price': 0.64, 'size': 2200, 'time': 1607002479195},
+ 'leverage': None,
+ 'open': {'price': 0.72, 'size': 0, 'time': 1606978596123},
+ 'pre': {'price': 0.85, 'size': 0, 'time': 1606942679446},
+ 'qualityId': 'realtime'}
+```
+
+Optionsschein
+
+```json
+{'barrier': None,
+ 'currency': 'USD',
+ 'delta': -0.0033,
+ 'expiry': '2021-06-16',
+ 'factor': None,
+ 'isin': 'DE000TR97Q79',
+ 'leverage': None,
+ 'optionType': 'put',
+ 'productCategoryName': 'Optionsschein',
+ 'size': 0.5,
+ 'strike': 77}
+```
+
+Portfolio
+
+```json
+{
+  "positions": [
+    {
+      "instrumentId": "DE000TT17QS7",
+      "netSize": 1000.0,
+      "netValue": 160.0,
+      "unrealisedAverageCost": 0.341,
+      "realisedProfit": 0.0
+    },
+    {
+      "instrumentId": "DE000TT17SY1",
+      "netSize": 1000.0,
+      "netValue": 200.0,
+      "unrealisedAverageCost": 0.221,
+      "realisedProfit": 0.0
+    }
+  ],
+  "netValue": 360.0,
+  "referenceChangeProfit": 0.0,
+  "referenceChangeProfitPercent": 0.0,
+  "unrealisedProfit": 359.438,
+  "unrealisedProfitPercent": 639.5693950177935,
+  "unrealisedCost": 0.562
+}
+```
+
+Derivatives
+
+```json
+{"results": [
+  {"isin": "DE000TR90MR9", "optionType": "put", "productCategoryName": "Optionsschein", "barrier": null, "leverage": null, "factor": null, "strike": 70, "delta": -0.0093, "size": 0.4, "currency": "USD", "expiry": "2020-12-16"}, 
+  {"isin": "DE000TR90MX7", "optionType": "put", "productCategoryName": "Optionsschein", "barrier": null, "leverage": null, "factor": null, "strike": 50, "delta": -0.0286, "size": 0.4, "currency": "USD", "expiry": "2021-12-15"},
+  .
+  .
+  .
+  ], 
+  "resultCount": 873
+}
+```
